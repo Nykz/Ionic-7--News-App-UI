@@ -1,0 +1,78 @@
+ion-segment {
+  margin-top: 10px;
+  --background: var(--ion-color-dark);
+  ion-segment-button {
+    padding-right: 3.5vh;
+    padding-left: 3.5vh;
+    --background: var(--ion-color-dark);
+    --indicator-color: var(--ion-color-dark);
+    --indicator-box-shadow: var(--ion-color-dark);
+    --color: var(--ion-color-medium);
+    --color-checked: #fff;
+  }
+}
+
+/* Targeting the ion-segment's scrollbar */
+ion-segment::-webkit-scrollbar {
+  width: 1px; /* Adjust the width of the scrollbar */
+  height: 1px;
+}
+
+/* Track (the area on which the thumb runs) */
+ion-segment::-webkit-scrollbar-track {
+  background-color: var(--ion-color-dark); /* Change the background color of the track */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+ion-segment::-webkit-scrollbar-thumb {
+  background-color: var(--ion-color-dark); /* Change the color of the scrollbar handle */
+}
+
+/* Handle on hover */
+ion-segment::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ion-color-dark); /* Change the color on hover */
+}
+
+ion-card {
+  border-radius: 0;
+  height: 20vh;
+  margin: 10px 16px;
+
+  ion-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the entire ion-img container */
+  }
+
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the alpha value to control the opacity */
+    pointer-events: none; /* Allows clicks to pass through the overlay to the underlying content */
+  }
+
+  ion-card-content {
+    position: absolute;
+    width: 100%;
+    bottom: 5%; /* Adjusted to position the title near the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Only translate horizontally */
+    z-index: 2; /* Ensure the title is above both the image and the overlay */
+    padding-bottom: 0;
+
+    ion-card-title {
+      font-size: 0.9rem;
+      color: #fff;
+    }
+    p {
+      ion-text {
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: lightgray;
+      }
+    }
+  }
+}

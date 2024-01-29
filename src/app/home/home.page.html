@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title> Newsfeed </ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
+    <ion-fab-button color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-segment [scrollable]="true" mode="ios" value="top_news">
+    <ion-segment-button value="recent_news">
+      Recent News
+    </ion-segment-button>
+    <ion-segment-button value="top_news">
+      Top News
+    </ion-segment-button>
+    <ion-segment-button value="around_news">
+      Around News
+    </ion-segment-button>
+  </ion-segment>
+
+  @for(item of news; track $index) {
+    <ion-card>
+      <ion-img [src]="item?.imageUrl"></ion-img>
+      <div class="image-overlay"></div>
+      <ion-card-content>
+        <ion-card-title>{{ item?.title }}</ion-card-title>
+        <p>
+          <ion-text>by {{item?.author}}</ion-text>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  }
+
+</ion-content>
